@@ -74,27 +74,8 @@ document.addEventListener('DOMContentLoaded', async () => {
 
 // 폰트 목록 로드
 async function loadFonts() {
-    let availableFonts = [];
-    
-    // Font Access API 사용 시도 (Chrome 103+)
-    try {
-        if ('queryLocalFonts' in window) {
-            try {
-                const localFonts = await window.queryLocalFonts();
-                const localFontNames = [...new Set(localFonts.map(font => font.family))];
-                availableFonts = localFontNames.sort();
-            } catch (e) {
-                // Font Access API 실패 시 폴백 방법 사용
-            }
-        }
-    } catch (err) {
-        // Font Access API 사용 불가
-    }
-    
-    // Font Access API가 실패했거나 폰트가 없으면 Canvas 기반 폰트 감지 사용
-    if (availableFonts.length === 0) {
-        availableFonts = detectAvailableFonts();
-    }
+    // OS에 설치된 폰트 자동 감지
+    const availableFonts = await detectAvailableFonts();
     
     // 드롭다운에 폰트 추가
     if (fontSelect) {
@@ -102,9 +83,27 @@ async function loadFonts() {
         if (availableFonts.length === 0) {
             const option = document.createElement('option');
             option.value = '';
-            option.textContent = '폰트를 불러올 수 없습니다';
+            
+            // Chrome/Edge에서 Font Access API 권한 안내
+            if ('queryLocalFonts' in window) {
+                if (window.fontAccessPermissionDenied) {
+                    option.textContent = '⚠️ 폰트 접근 권한이 필요합니다 - 주소창의 자물쇠 아이콘을 클릭하여 권한을 허용해주세요';
+                    // 사용자에게 알림 표시
+                    setTimeout(() => {
+                        alert('폰트 접근 권한이 필요합니다.\n\nChrome/Edge 브라우저에서:\n1. 주소창 왼쪽의 자물쇠 아이콘을 클릭하세요\n2. "폰트" 권한을 "허용"으로 설정하세요\n3. 페이지를 새로고침하세요');
+                    }, 500);
+                } else {
+                    option.textContent = '폰트를 감지하는 중... (권한 요청 중)';
+                }
+            } else {
+                option.textContent = '⚠️ Chrome 또는 Edge 브라우저를 사용해주세요 (폰트 감지 기능 지원)';
+                setTimeout(() => {
+                    alert('OS에 설치된 모든 폰트를 사용하려면 Chrome 또는 Edge 브라우저가 필요합니다.\n\n현재 브라우저에서는 Font Access API를 지원하지 않습니다.');
+                }, 500);
+            }
             fontSelect.appendChild(option);
         } else {
+            console.log(`총 ${availableFonts.length}개 폰트 로드됨`);
             availableFonts.forEach(font => {
                 const option = document.createElement('option');
                 option.value = font;
@@ -121,69 +120,133 @@ async function loadFonts() {
     try { updateLivePreviews(); } catch(_) {}
 }
 
-// Canvas를 사용한 폰트 감지 (Font Access API 없이)
-function detectAvailableFonts() {
-    const testFonts = [
-        // 한글 폰트
-        '나눔고딕', 'Nanum Gothic',
-        '나눔명조', 'Nanum Myeongjo',
-        '나눔바른고딕', 'Nanum Barun Gothic',
-        '나눔스퀘어', 'Nanum Square',
-        '나눔펜', 'Nanum Pen',
-        '맑은 고딕', 'Malgun Gothic',
-        '돋움', 'Dotum',
-        '굴림', 'Gulim',
-        '바탕', 'Batang',
-        '궁서', 'Gungsuh',
-        'HY견고딕', 'HY Gothic',
-        'HY견명조', 'HY MyeongJo',
-        'HY헤드라인M', 'HY HeadLine',
-        'HY그래픽M', 'HY Graphic',
-        'Noto Sans KR', 'Noto Serif KR',
-        'Pretendard', 'Pretendard Variable',
-        'IBM Plex Sans KR',
-        'KoPub Dotum', 'KoPub Batang',
-        // 영문 폰트
-        'Arial', 'Helvetica', 'Times New Roman', 'Courier New',
-        'Georgia', 'Verdana', 'Tahoma', 'Trebuchet MS',
-        'Impact', 'Comic Sans MS', 'Lucida Console',
-        'Roboto', 'Open Sans', 'Lato', 'Montserrat',
-        'Source Sans Pro', 'Raleway', 'Ubuntu',
-        // 일본어 폰트
-        'Noto Sans JP', 'Noto Serif JP',
-        'Yu Gothic', 'Meiryo', 'MS Gothic', 'MS Mincho',
-        // 중국어 폰트
-        'Noto Sans SC', 'Noto Serif SC', 'SimHei', 'SimSun',
-        // 기타
-        'Apple SD Gothic Neo', 'AppleGothic', 'AppleMyungjo',
-        'Nanum Gothic Coding', 'D2Coding', 'Consolas', 'Monaco', 'Courier'
+// 제네릭 폰트 패밀리 제외 여부 확인
+function isGenericFontFamily(fontFamily) {
+    if (!fontFamily) return true;
+    const normalized = fontFamily.toLowerCase().trim();
+    
+    // 정확히 일치하는 제네릭 폰트만 제외
+    const genericFamilies = [
+        'serif', 'sans-serif', 'monospace', 'cursive', 'fantasy',
+        'sans', 'mono'
     ];
     
+    // 정확히 일치하는 경우만 제외
+    if (genericFamilies.includes(normalized)) {
+        return true;
+    }
+    
+    // CSS 시스템 폰트 키워드로 시작하는 경우 제외 (하지만 실제 폰트 이름은 허용)
+    // 예: 'system-ui'는 제외하지만 'System Font'는 허용
+    if (normalized === 'system-ui' || normalized === '-apple-system' || 
+        normalized === 'blinkmacsystemfont') {
+        return true;
+    }
+    
+    return false;
+}
+
+// OS에 설치된 모든 폰트 자동 감지
+async function detectAvailableFonts() {
+    const availableFonts = new Set();
+    let hasPermission = false;
+    
+    // 1. Font Access API 사용 (Chrome/Edge 지원, 사용자 권한 필요)
+    try {
+        if ('queryLocalFonts' in window) {
+            console.log('Font Access API 시도 중...');
+            const fonts = await window.queryLocalFonts();
+            console.log(`Font Access API로 ${fonts.length}개 폰트 발견`);
+            
+            fonts.forEach(font => {
+                if (font.family) {
+                    // 폰트 이름 정리 (따옴표 제거)
+                    const family = font.family.replace(/['"]/g, '').trim();
+                    // 제네릭 폰트가 아닌 경우만 추가
+                    if (family && !isGenericFontFamily(family)) {
+                        availableFonts.add(family);
+                    }
+                }
+            });
+            
+            hasPermission = true;
+            // Font Access API로 폰트를 찾았으면 반환
+            if (availableFonts.size > 0) {
+                console.log(`총 ${availableFonts.size}개 폰트 감지됨`);
+                return Array.from(availableFonts).sort();
+            }
+        }
+    } catch (err) {
+        // 권한 거부 또는 API 미지원 시
+        console.error('Font Access API 오류:', err);
+        if (err.name === 'SecurityError' || err.name === 'NotAllowedError') {
+            console.warn('폰트 접근 권한이 거부되었습니다.');
+            // 권한 거부 상태를 저장하여 나중에 안내 메시지 표시
+            window.fontAccessPermissionDenied = true;
+        }
+    }
+    
+    // 2. document.fonts에서 로드된 폰트 확인
+    if (document.fonts && document.fonts.size > 0) {
+        document.fonts.forEach(font => {
+            if (font.family) {
+                // 따옴표 제거 및 정리
+                const family = font.family.replace(/['"]/g, '').trim();
+                // 쉼표로 구분된 폰트 목록에서 첫 번째만 사용
+                const firstFont = family.split(',')[0].trim();
+                if (firstFont && !isGenericFontFamily(firstFont)) {
+                    availableFonts.add(firstFont);
+                }
+            }
+        });
+        console.log(`document.fonts에서 ${availableFonts.size}개 폰트 발견`);
+    }
+    
+    // 3. Canvas를 사용한 폰트 검증 및 추가 감지
     const canvas = document.createElement('canvas');
     const ctx = canvas.getContext('2d');
     const baseFont = 'monospace';
     const testString = 'mmmmmmmmmmlli';
-    const baseWidth = {};
     
     // 기본 폰트로 기준 너비 측정
     ctx.font = `12px ${baseFont}`;
-    baseWidth[baseFont] = ctx.measureText(testString).width;
+    const baseWidth = ctx.measureText(testString).width;
     
-    const available = [];
+    // 감지된 폰트들을 Canvas로 검증
+    const verifiedFonts = [];
+    const fontsToTest = Array.from(availableFonts);
     
-    // 각 폰트가 실제로 사용 가능한지 테스트
-    testFonts.forEach(font => {
-        ctx.font = `12px "${font}", ${baseFont}`;
-        const width = ctx.measureText(testString).width;
+    fontsToTest.forEach(font => {
+        // 제네릭 폰트는 건너뛰기
+        if (isGenericFontFamily(font)) {
+            return;
+        }
         
-        // 폰트가 실제로 로드되었는지 확인 (기본 폰트와 너비가 다르면 사용 가능)
-        if (width !== baseWidth[baseFont]) {
-            available.push(font);
+        try {
+            ctx.font = `12px "${font}", ${baseFont}`;
+            const width = ctx.measureText(testString).width;
+            
+            // 폰트가 실제로 로드되었는지 확인 (기본 폰트와 너비가 다르면 사용 가능)
+            if (width !== baseWidth) {
+                verifiedFonts.push(font);
+            }
+        } catch (e) {
+            // 폰트 로드 실패 시 무시
         }
     });
     
-    // 중복 제거 및 정렬
-    return [...new Set(available)].sort();
+    if (verifiedFonts.length > 0) {
+        console.log(`검증 완료: ${verifiedFonts.length}개 폰트 사용 가능`);
+        return [...new Set(verifiedFonts)].sort();
+    }
+    
+    // Font Access API 권한이 거부된 경우를 확인
+    if (!hasPermission && window.fontAccessPermissionDenied) {
+        return []; // 빈 배열 반환하여 안내 메시지 표시
+    }
+    
+    // 폰트를 찾지 못한 경우 빈 배열 반환
+    return [];
 }
 
 // 텍스트 너비 측정 (폰트 감지용)
