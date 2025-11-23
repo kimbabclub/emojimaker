@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>커스텀 이모지 생성기</title>
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+
+
+        <div class="two-column-layout">
+            <!-- 왼쪽 컬럼: 미리보기들 -->
+            <div class="left-column">
+                <!-- 실시간 미리보기 (최상단) -->        
+                 <header>
+            <h1>텍스트 이모지 생성기</h1>
+            <div class="info"><div class="info-title"> 텍스트 이모지 생성기란? </div>
+            <div>• 그래픽 툴 없이 간단히 텍스트 이모지를 생성할 수 있는 서비스입니다.<br>
+                • 접속자의 컴퓨터에 설치된 폰트를 이용합니다.<br>
+                • 사용 전 폰트의 사용 범위를 꼭 확인해주세요!</div></div></header>
+                
+
+
+                <div class="settings-panel">
+                    <h2>만들기</h2>
+                    <header><div class="info"><div class="info-title"> 가이드 - 만들기  </div>
+                        <div>• 정사각형 사양과, 최대 2:1 비율로 제작되는 자동 조절 사양, 가로로 길어지는 제한없음 사양을 지원합니다.<br>
+                            • 가로로 지나치게 긴 텍스트 이모지는 마스토돈과의 호환성이 좋지 않으므로 권장하지 않습니다.<br>
+                            • 미리보기 란에 원하는 텍스트를 입력해서 스타일을 미리 확인하실 수 있습니다.<br>
+                            • 줄바꿈은 자동으로 처리되며, 기본적으로 2줄로 고정됩니다.<br>
+                            • 띄어쓰기를 두 번 하면 수동 줄바꿈이 되어 3줄 이상의 텍스트를 만들 수 있어요.<br>
+                            • |텍스트|로 둘러싸면 줄바꿈을 무시합니다.<br></div></div></header>
+                    <div class="live-preview-grid">
+                        <div class="live-preview-item">
+                            <canvas id="livePreview1"></canvas>
+                        </div>
+                        <div class="live-preview-item white-bg">
+                            <canvas id="livePreview3"></canvas>
+                        </div>
+                        <div class="live-preview-item black-bg">
+                            <canvas id="livePreview5"></canvas>
+                        </div>
+                    </div>
+                    <div class="live-preview-controls">
+                        <input id="livePreviewText" type="text" placeholder="예: 안녕하세요 또는 |안녕하세요|" value="미리보기" autocomplete="off">
+                        <button id="applyLivePreviewBtn" class="btn-small">미리보기</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 오른쪽 컬럼: 설정과 입력 -->
+            <div class="right-column">
+                <!-- 설정 패널 -->
+                <div class="settings-panel">
+                <!-- 설정 그리드: 제목 섹션별 열 배치 -->
+                <div class="settings-grid">
+                    <!-- [이미지 비율] -->
+                    <div class="settings-section-title">이미지 비율</div>
+                    <div class="settings-section-body">
+                        <div class="setting-group aspect-ratio-group" role="radiogroup" aria-label="이미지 비율">
+                            <label class="radio-option">
+                                <input type="radio" name="aspectRatio" value="1:1" checked>
+                                <span>정사각형 (1:1)</span>
+                            </label>
+                            <label class="radio-option">
+                                <input type="radio" name="aspectRatio" value="1:1-fit">
+                                <span>자동 조절 (1:1~2:1)</span>
+                            </label>
+                            <label class="radio-option">
+                                <input type="radio" name="aspectRatio" value="unlimited">
+                                <span>제한없음</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <!-- [폰트 선택] -->
+                    <div class="settings-section-title">폰트 선택</div>
+                    <div class="settings-section-body">
+                        <div class="setting-row-inline">
+                            <div class="setting-group" style="flex:1;">
+                                <select id="fontSelect" class="dropdown-compact">
+                                    <option value="">로딩 중...</option>
+                                </select>
+                            </div>
+                            
+                        </div>
+                    </div>
+
+                    <!-- [글자] -->
+                    <div class="settings-section-title">글자</div>
+                    <div class="settings-section-body">
+                        <div class="setting-row-inline">
+                            <div class="setting-group">
+                                <select id="textColorMode">
+                                    <option value="solid">단색</option>
+                                    <option value="gradient-vertical">그라디언트(수직)</option>
+                                    <option value="gradient-horizontal">그라디언트(수평)</option>
+                                    <option value="gradient-diagonal">그라디언트(대각선)</option>
+                                </select>
+                            </div>
+                            <div class="setting-group" id="solidColorGroup">
+                                <input type="color" id="textColor" value="#FFFFFF">
+                            </div>
+                            <div class="setting-group" id="gradientGroup" style="display: none;">
+                                <input type="color" id="gradientColor1" value="#FF6B6B">
+                            </div>
+                            <div class="setting-group" id="gradientGroup2" style="display: none;">
+                                <input type="color" id="gradientColor2" value="#4ECDC4">
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- [테두리] -->
+                    <div class="settings-section-title">테두리</div>
+                    <div class="settings-section-body">
+                        <div class="setting-row-inline">
+                            <div class="setting-group">
+                                <select id="strokeColorMode">
+                                    <option value="solid">단색</option>
+                                    <option value="gradient-vertical">그라디언트(수직)</option>
+                                    <option value="gradient-horizontal">그라디언트(수평)</option>
+                                    <option value="gradient-diagonal">그라디언트(대각선)</option>
+                                </select>
+                            </div>
+                            <div class="setting-group" id="strokeSolidColorGroup">
+                                <input type="color" id="strokeColor" value="#000000">
+                            </div>
+                            <div class="setting-group gradient-pair" id="strokeGradientGroup" style="display: none;">
+                                <input type="color" id="strokeGradientColor1" value="#000000">
+                                <input type="color" id="strokeGradientColor2" value="#FFFFFF">
+                            </div>
+                            <div class="setting-group">
+                                <div class="stepper" data-target="strokeWidth">
+                                    <button type="button" class="stepper-btn" data-action="decrement" aria-label="테두리 두께 감소">-</button>
+                                    <span id="strokeWidthValue" class="stepper-value">8</span>
+                                    <button type="button" class="stepper-btn" data-action="increment" aria-label="테두리 두께 증가">+</button>
+                                </div>
+                                <input type="number" id="strokeWidth" class="stepper-input" min="0" max="20" value="8" step="1">
+                            </div>
+                        </div>
+                        <div class="setting-row-inline">
+                            <div class="setting-group">
+                                <select id="outerStrokeColorMode">
+                                    <option value="solid">단색</option>
+                                    <option value="gradient-vertical">그라디언트(수직)</option>
+                                    <option value="gradient-horizontal">그라디언트(수평)</option>
+                                    <option value="gradient-diagonal">그라디언트(대각선)</option>
+                                </select>
+                            </div>
+                            <div class="setting-group" id="outerStrokeSolidColorGroup">
+                                <input type="color" id="outerStrokeColor" value="#FFFFFF">
+                            </div>
+                            <div class="setting-group gradient-pair" id="outerStrokeGradientGroup" style="display: none;">
+                                <input type="color" id="outerStrokeGradientColor1" value="#FFFFFF">
+                                <input type="color" id="outerStrokeGradientColor2" value="#000000">
+                            </div>
+                            <div class="setting-group">
+                                <div class="stepper" data-target="outerStrokeWidth">
+                                    <button type="button" class="stepper-btn" data-action="decrement" aria-label="외곽 테두리 두께 감소">-</button>
+                                    <span id="outerStrokeWidthValue" class="stepper-value">0</span>
+                                    <button type="button" class="stepper-btn" data-action="increment" aria-label="외곽 테두리 두께 증가">+</button>
+                                </div>
+                                <input type="number" id="outerStrokeWidth" class="stepper-input" min="0" max="20" value="0" step="1">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                </div>
+ 
+            <!-- 입력 패널 -->
+            <div class="input-panel">
+                <h2>내보내기</h2>
+                <header><div class="info"><div class="info-title"> 가이드 - 내보내기</div>
+                    <div>• 원하는 텍스트를 대량생산하실 수 있습니다.<br>
+                        • 쉼표로 구분하며, 줄바꿈은 자동으로 처리됩니다. 기본적으로 2줄이지만 띄어쓰기 두 번으로 3줄 이상도 만들 수 있습니다.<br>
+                        • |텍스트|로 둘러싸면 줄바꿈을 무시합니다.<br>                        
+                        • 대량생산 기능으로 생성한 이모지는 압축파일로 다운로드되며,<br>ㅤ그대로 미스키에 업로드하실 수 있습니다.<br>
+                        ㅤ다만, 이모지 태그가 kr_로마자 형식으로 되어 있으므로 호환성을 위해<br>ㅤ적합한 태그로 수정하시는 것을 권장드립니다.<br><br>
+                        • 밀키트 기능으로 엄선된 텍스트 139종을 원클릭으로 생성하실 수 있습니다.<br>ㅤ압축파일째 미스키에 업로드하시면 바로 등록됩니다.</div></div>
+                </header>
+                <div class="setting-group">
+                    <label for="batchInput">생성할 텍스트 (쉼표로 구분)</label>
+                    <textarea id="batchInput" rows="8" placeholder="예: 안녕하세요,|안녕하세요|,반가워요">안녕하세요,반가워요,고마워요,살려줘요,재밌겠다,맛있겠다,좋아,싫어,붐업,붐따,배고파요</textarea>
+                </div>
+                <button id="generateBtn" class="btn-primary">이모지 내보내기</button>
+                <button id="downloadBtn" class="btn-success" style="display: none;">ZIP 다운로드</button>
+                <button id="mealKitBtn" class="btn-primary" style="margin-top: 10px;">밀키트 생성</button>
+                
+                
+                
+                <div id="progress" style="display: none;">
+                    <div class="progress-bar">
+                        <div id="progressFill" class="progress-fill"></div>
+                    </div>
+                    <p id="progressText">생성 중...</p>
+                </div>
+            </div>
+
+            <!-- 미리보기 영역 (최하단) -->
+            <div class="preview-section">
+                <h2>미리보기</h2>
+                <div id="previewGrid" class="preview-grid">
+                    <p class="placeholder-text">(՞•֊•՞)</p>
+                </div>
+            </div>
+        </div>
+
+
+        </div>
+        <div class="footer">
+            Powered by <a href="http://buttersc.one" target="_blank" rel="noopener noreferrer">buttersc.one</a>
+        </div>
+    </div>
+        <!-- 숨겨진 캔버스 -->
+        <canvas id="canvas" style="display: none;"></canvas>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
+

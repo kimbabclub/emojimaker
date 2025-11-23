@@ -1,0 +1,1536 @@
+{
+  "metaVersion": 2,
+  "host": "json.buttersc.one",
+  "exportedAt": "2025-11-23T12:31:01.661Z",
+  "emojis": [
+    {
+      "downloaded": true,
+      "fileName": "kr_wanttogo.png",
+      "emoji": {
+        "name": "kr_wanttogo",
+        "category": "텍스트",
+        "aliases": [
+          "가고싶다"
+        ]
+      }
+    },
+    {
+      "downloaded": true,
+      "fileName": "kr_possible.png",
+      "emoji": {
+        "name": "kr_possible",
+        "category": "텍스트",
+        "aliases": [
+          "가능"
+        ]
+      }
+    },
+    {
+      "downloaded": true,
+      "fileName": "kr_letsgo.png",
+      "emoji": {
+        "name": "kr_letsgo",
+        "category": "텍스트",
+        "aliases": [
+          "가보자고"
+        ]
+      }
+    },
+    {
+      "downloaded": true,
+      "fileName": "kr_thankyou.png",
+      "emoji": {
+        "name": "kr_thankyou",
+        "category": "텍스트",
+        "aliases": [
+          "감사합니다"
+        ]
+      }
+    },
+    {
+      "downloaded": true,
+      "fileName": "kr_wanttohave.png",
+      "emoji": {
+        "name": "kr_wanttohave",
+        "category": "텍스트",
+        "aliases": [
+          "갖고싶다"
+        ]
+      }
+    },
+    {
+      "downloaded": true,
+      "fileName": "kr_letswatchtogether.png",
+      "emoji": {
+        "name": "kr_letswatchtogether",
+        "category": "텍스트",
+        "aliases": [
+          "같이봐요"
+        ]
+      }
+    },
+    {
+      "downloaded": true,
+      "fileName": "kr_letsusetogether.png",
+      "emoji": {
+        "name": "kr_letsusetogether",
+        "category": "텍스트",
+        "aliases": [
+          "같이써요"
+        ]
+      }
+    },
+    {
+      "downloaded": true,
+      "fileName": "kr_worried.png",
+      "emoji": {
+        "name": "kr_worried",
+        "category": "텍스트",
+        "aliases": [
+          "걱정돼요"
+        ]
+      }
+    },
+    {
+      "downloaded": true,
+      "fileName": "kr_thankyou2.png",
+      "emoji": {
+        "name": "kr_thankyou2",
+        "category": "텍스트",
+        "aliases": [
+          "고마워요"
+        ]
+      }
+    },
+    {
+      "downloaded": true,
+      "fileName": "kr_youworkedhard.png",
+      "emoji": {
+        "name": "kr_youworkedhard",
+        "category": "텍스트",
+        "aliases": [
+          "고생했어요"
+        ]
+      }
+    },
+    {
+      "downloaded": true,
+      "fileName": "kr_itsokay.png",
+      "emoji": {
+        "name": "kr_itsokay",
+        "category": "텍스트",
+        "aliases": [
+          "괜찮아요"
+        ]
+      }
+    },
+    {
+      "downloaded": true,
+      "fileName": "kr_soundsfake.png",
+      "emoji": {
+        "name": "kr_soundsfake",
+        "category": "텍스트",
+        "aliases": [
+          "구라같은데"
+        ]
+      }
+    },
+    {
+      "downloaded": true,
+      "fileName": "kr_curious.png",
+      "emoji": {
+        "name": "kr_curious",
+        "category": "텍스트",
+        "aliases": [
+          "궁금해요"
+        ]
+      }
+    },
+    {
+      "downloaded": true,
+      "fileName": "kr_cute.png",
+      "emoji": {
+        "name": "kr_cute",
+        "category": "텍스트",
+        "aliases": [
+          "귀여워요"
+        ]
+      }
+    },
+    {
+      "downloaded": true,
+      "fileName": "kr_that.png",
+      "emoji": {
+        "name": "kr_that",
+        "category": "텍스트",
+        "aliases": [
+          "그거"
+        ]
+      }
+    },
+    {
+      "downloaded": true,
+      "fileName": "kr_thatstrue.png",
+      "emoji": {
+        "name": "kr_thatstrue",
+        "category": "텍스트",
+        "aliases": [
+          "그건그래"
+        ]
+      }
+    },
+    {
+      "downloaded": true,
+      "fileName": "kr_okay.png",
+      "emoji": {
+        "name": "kr_okay",
+        "category": "텍스트",
+        "aliases": [
+          "그래"
+        ]
+      }
+    },
+    {
+      "downloaded": true,
+      "fileName": "kr_soundsplausible.png",
+      "emoji": {
+        "name": "kr_soundsplausible",
+        "category": "텍스트",
+        "aliases": [
+          "그럴듯해"
+        ]
+      }
+    },
+    {
+      "downloaded": true,
+      "fileName": "kr_ithappens.png",
+      "emoji": {
+        "name": "kr_ithappens",
+        "category": "텍스트",
+        "aliases": [
+          "그럴수있지"
+        ]
+      }
+    },
+    {
+      "downloaded": true,
+      "fileName": "kr_but.png",
+      "emoji": {
+        "name": "kr_but",
+        "category": "텍스트",
+        "aliases": [
+          "근데"
+        ]
+      }
+    },
+    {
+      "downloaded": true,
+      "fileName": "kr_kkya.png",
+      "emoji": {
+        "name": "kr_kkya",
+        "category": "텍스트",
+        "aliases": [
+          "꺅!"
+        ]
+      }
+    },
+    {
+      "downloaded": true,
+      "fileName": "kr_thatswhatimean.png",
+      "emoji": {
+        "name": "kr_thatswhatimean",
+        "category": "텍스트",
+        "aliases": [
+          "내말이"
+        ]
+      }
+    },
+    {
+      "downloaded": true,
+      "fileName": "kr_somuch.png",
+      "emoji": {
+        "name": "kr_somuch",
+        "category": "텍스트",
+        "aliases": [
+          "너무너무"
+        ]
+      }
+    },
+    {
+      "downloaded": true,
+      "fileName": "kr_toohot.png",
+      "emoji": {
+        "name": "kr_toohot",
+        "category": "텍스트",
+        "aliases": [
+          "너무더워"
+        ]
+      }
+    },
+    {
+      "downloaded": true,
+      "fileName": "kr_iloveit.png",
+      "emoji": {
+        "name": "kr_iloveit",
+        "category": "텍스트",
+        "aliases": [
+          "너무좋아"
+        ]
+      }
+    },
+    {
+      "downloaded": true,
+      "fileName": "kr_toocold.png",
+      "emoji": {
+        "name": "kr_toocold",
+        "category": "텍스트",
+        "aliases": [
+          "너무추워"
+        ]
+      }
+    },
+    {
+      "downloaded": true,
+      "fileName": "kr_yes.png",
+      "emoji": {
+        "name": "kr_yes",
+        "category": "텍스트",
+        "aliases": [
+          "네"
+        ]
+      }
+    },
+    {
+      "downloaded": true,
+      "fileName": "kr_yes2.png",
+      "emoji": {
+        "name": "kr_yes2",
+        "category": "텍스트",
+        "aliases": [
+          "네?"
+        ]
+      }
+    },
+    {
+      "downloaded": true,
+      "fileName": "kr_wanttoliedown.png",
+      "emoji": {
+        "name": "kr_wanttoliedown",
+        "category": "텍스트",
+        "aliases": [
+          "눕고싶다"
+        ]
+      }
+    },
+    {
+      "downloaded": true,
+      "fileName": "kr_likeyou.png",
+      "emoji": {
+        "name": "kr_likeyou",
+        "category": "텍스트",
+        "aliases": [
+          "님같다"
+        ]
+      }
+    },
+    {
+      "downloaded": true,
+      "fileName": "kr_youfirst.png",
+      "emoji": {
+        "name": "kr_youfirst",
+        "category": "텍스트",
+        "aliases": [
+          "님선"
+        ]
+      }
+    },
+    {
+      "downloaded": true,
+      "fileName": "kr_itsyou.png",
+      "emoji": {
+        "name": "kr_itsyou",
+        "category": "텍스트",
+        "aliases": [
+          "님이다"
+        ]
+      }
+    },
+    {
+      "downloaded": true,
+      "fileName": "kr_youarecharacter.png",
+      "emoji": {
+        "name": "kr_youarecharacter",
+        "category": "텍스트",
+        "aliases": [
+          "님캐다"
+        ]
+      }
+    },
+    {
+      "downloaded": true,
+      "fileName": "kr_givemeall.png",
+      "emoji": {
+        "name": "kr_givemeall",
+        "category": "텍스트",
+        "aliases": [
+          "다주세요"
+        ]
+      }
+    },
+    {
+      "downloaded": true,
+      "fileName": "kr_urwelcome.png",
+      "emoji": {
+        "name": "kr_urwelcome",
+        "category": "텍스트",
+        "aliases": [
+          "당신은잘오다"
+        ]
+      }
+    },
+    {
+      "downloaded": true,
+      "fileName": "kr_ofcourse.png",
+      "emoji": {
+        "name": "kr_ofcourse",
+        "category": "텍스트",
+        "aliases": [
+          "당연하지"
+        ]
+      }
+    },
+    {
+      "downloaded": true,
+      "fileName": "kr_wanttorunaway.png",
+      "emoji": {
+        "name": "kr_wanttorunaway",
+        "category": "텍스트",
+        "aliases": [
+          "도망치고싶어"
+        ]
+      }
+    },
+    {
+      "downloaded": true,
+      "fileName": "kr_wanttohear.png",
+      "emoji": {
+        "name": "kr_wanttohear",
+        "category": "텍스트",
+        "aliases": [
+          "듣고싶다"
+        ]
+      }
+    },
+    {
+      "downloaded": true,
+      "fileName": "kr_warmwarm.png",
+      "emoji": {
+        "name": "kr_warmwarm",
+        "category": "텍스트",
+        "aliases": [
+          "따끈따끈"
+        ]
+      }
+    },
+    {
+      "downloaded": true,
+      "fileName": "kr_warmstory.png",
+      "emoji": {
+        "name": "kr_warmstory",
+        "category": "텍스트",
+        "aliases": [
+          "따뜻한이야기"
+        ]
+      }
+    },
+    {
+      "downloaded": true,
+      "fileName": "kr_warm.png",
+      "emoji": {
+        "name": "kr_warm",
+        "category": "텍스트",
+        "aliases": [
+          "따뜻해요"
+        ]
+      }
+    },
+    {
+      "downloaded": true,
+      "fileName": "kr_timehascome.png",
+      "emoji": {
+        "name": "kr_timehascome",
+        "category": "텍스트",
+        "aliases": [
+          "때가됨"
+        ]
+      }
+    },
+    {
+      "downloaded": true,
+      "fileName": "kr_again.png",
+      "emoji": {
+        "name": "kr_again",
+        "category": "텍스트",
+        "aliases": [
+          "또"
+        ]
+      }
+    },
+    {
+      "downloaded": true,
+      "fileName": "kr_real.png",
+      "emoji": {
+        "name": "kr_real",
+        "category": "텍스트",
+        "aliases": [
+          "ㄹㅇ"
+        ]
+      }
+    },
+    {
+      "downloaded": true,
+      "fileName": "kr_reallol.png",
+      "emoji": {
+        "name": "kr_reallol",
+        "category": "텍스트",
+        "aliases": [
+          "ㄹㅇㅋㅋ"
+        ]
+      }
+    },
+    {
+      "downloaded": true,
+      "fileName": "kr_soft.png",
+      "emoji": {
+        "name": "kr_soft",
+        "category": "텍스트",
+        "aliases": [
+          "말랑말랑"
+        ]
+      }
+    },
+    {
+      "downloaded": true,
+      "fileName": "kr_looksdelicious.png",
+      "emoji": {
+        "name": "kr_looksdelicious",
+        "category": "텍스트",
+        "aliases": [
+          "맛있겠다"
+        ]
+      }
+    },
+    {
+      "downloaded": true,
+      "fileName": "kr_delicious.png",
+      "emoji": {
+        "name": "kr_delicious",
+        "category": "텍스트",
+        "aliases": [
+          "맛있어요"
+        ]
+      }
+    },
+    {
+      "downloaded": true,
+      "fileName": "kr_thatsright.png",
+      "emoji": {
+        "name": "kr_thatsright",
+        "category": "텍스트",
+        "aliases": [
+          "맞는말"
+        ]
+      }
+    },
+    {
+      "downloaded": true,
+      "fileName": "kr_wanttoeat.png",
+      "emoji": {
+        "name": "kr_wanttoeat",
+        "category": "텍스트",
+        "aliases": [
+          "먹고싶다"
+        ]
+      }
+    },
+    {
+      "downloaded": true,
+      "fileName": "kr_cool.png",
+      "emoji": {
+        "name": "kr_cool",
+        "category": "텍스트",
+        "aliases": [
+          "멋있어요"
+        ]
+      }
+    },
+    {
+      "downloaded": true,
+      "fileName": "kr_quote.png",
+      "emoji": {
+        "name": "kr_quote",
+        "category": "텍스트",
+        "aliases": [
+          "명언"
+        ]
+      }
+    },
+    {
+      "downloaded": true,
+      "fileName": "kr_masterpiece.png",
+      "emoji": {
+        "name": "kr_masterpiece",
+        "category": "텍스트",
+        "aliases": [
+          "명작"
+        ]
+      }
+    },
+    {
+      "downloaded": true,
+      "fileName": "kr_didntknow.png",
+      "emoji": {
+        "name": "kr_didntknow",
+        "category": "텍스트",
+        "aliases": [
+          "몰랐어요"
+        ]
+      }
+    },
+    {
+      "downloaded": true,
+      "fileName": "kr_scarystory.png",
+      "emoji": {
+        "name": "kr_scarystory",
+        "category": "텍스트",
+        "aliases": [
+          "무서운이야기"
+        ]
+      }
+    },
+    {
+      "downloaded": true,
+      "fileName": "kr_isitaproblem.png",
+      "emoji": {
+        "name": "kr_isitaproblem",
+        "category": "텍스트",
+        "aliases": [
+          "문제가될까요?"
+        ]
+      }
+    },
+    {
+      "downloaded": true,
+      "fileName": "kr_sorry.png",
+      "emoji": {
+        "name": "kr_sorry",
+        "category": "텍스트",
+        "aliases": [
+          "미안해요"
+        ]
+      }
+    },
+    {
+      "downloaded": true,
+      "fileName": "kr_eatmeal.png",
+      "emoji": {
+        "name": "kr_eatmeal",
+        "category": "텍스트",
+        "aliases": [
+          "밥드세요"
+        ]
+      }
+    },
+    {
+      "downloaded": true,
+      "fileName": "kr_missyou.png",
+      "emoji": {
+        "name": "kr_missyou",
+        "category": "텍스트",
+        "aliases": [
+          "보고싶다"
+        ]
+      }
+    },
+    {
+      "downloaded": true,
+      "fileName": "kr_impossible.png",
+      "emoji": {
+        "name": "kr_impossible",
+        "category": "텍스트",
+        "aliases": [
+          "불가능"
+        ]
+      }
+    },
+    {
+      "downloaded": true,
+      "fileName": "kr_wanttobuy.png",
+      "emoji": {
+        "name": "kr_wanttobuy",
+        "category": "텍스트",
+        "aliases": [
+          "사고싶다"
+        ]
+      }
+    },
+    {
+      "downloaded": true,
+      "fileName": "kr_welove.png",
+      "emoji": {
+        "name": "kr_welove",
+        "category": "텍스트",
+        "aliases": [
+          "사랑을하잖아"
+        ]
+      }
+    },
+    {
+      "downloaded": true,
+      "fileName": "kr_precious.png",
+      "emoji": {
+        "name": "kr_precious",
+        "category": "텍스트",
+        "aliases": [
+          "소중해요"
+        ]
+      }
+    },
+    {
+      "downloaded": true,
+      "fileName": "kr_sadstory.png",
+      "emoji": {
+        "name": "kr_sadstory",
+        "category": "텍스트",
+        "aliases": [
+          "슬픈이야기"
+        ]
+      }
+    },
+    {
+      "downloaded": true,
+      "fileName": "kr_truestory.png",
+      "emoji": {
+        "name": "kr_truestory",
+        "category": "텍스트",
+        "aliases": [
+          "실화"
+        ]
+      }
+    },
+    {
+      "downloaded": true,
+      "fileName": "kr_patpat.png",
+      "emoji": {
+        "name": "kr_patpat",
+        "category": "텍스트",
+        "aliases": [
+          "쓰담쓰담"
+        ]
+      }
+    },
+    {
+      "downloaded": true,
+      "fileName": "kr_ah.png",
+      "emoji": {
+        "name": "kr_ah",
+        "category": "텍스트",
+        "aliases": [
+          "아"
+        ]
+      }
+    },
+    {
+      "downloaded": true,
+      "fileName": "kr_no.png",
+      "emoji": {
+        "name": "kr_no",
+        "category": "텍스트",
+        "aliases": [
+          "아니"
+        ]
+      }
+    },
+    {
+      "downloaded": true,
+      "fileName": "kr_ouch.png",
+      "emoji": {
+        "name": "kr_ouch",
+        "category": "텍스트",
+        "aliases": [
+          "아야!"
+        ]
+      }
+    },
+    {
+      "downloaded": true,
+      "fileName": "kr_ahh.png",
+      "emoji": {
+        "name": "kr_ahh",
+        "category": "텍스트",
+        "aliases": [
+          "악"
+        ]
+      }
+    },
+    {
+      "downloaded": true,
+      "fileName": "kr_noway.png",
+      "emoji": {
+        "name": "kr_noway",
+        "category": "텍스트",
+        "aliases": [
+          "안돼요"
+        ]
+      }
+    },
+    {
+      "downloaded": true,
+      "fileName": "kr_hugyou.png",
+      "emoji": {
+        "name": "kr_hugyou",
+        "category": "텍스트",
+        "aliases": [
+          "안아줄게요"
+        ]
+      }
+    },
+    {
+      "downloaded": true,
+      "fileName": "kr_wanttoknow.png",
+      "emoji": {
+        "name": "kr_wanttoknow",
+        "category": "텍스트",
+        "aliases": [
+          "알고싶다"
+        ]
+      }
+    },
+    {
+      "downloaded": true,
+      "fileName": "kr_thanksoverwhelming.png",
+      "emoji": {
+        "name": "kr_thanksoverwhelming",
+        "category": "텍스트",
+        "aliases": [
+          "압도적감사"
+        ]
+      }
+    },
+    {
+      "downloaded": true,
+      "fileName": "kr_huh.png",
+      "emoji": {
+        "name": "kr_huh",
+        "category": "텍스트",
+        "aliases": [
+          "어?"
+        ]
+      }
+    },
+    {
+      "downloaded": true,
+      "fileName": "kr_welcome.png",
+      "emoji": {
+        "name": "kr_welcome",
+        "category": "텍스트",
+        "aliases": [
+          "어서오세요"
+        ]
+      }
+    },
+    {
+      "downloaded": true,
+      "fileName": "kr_ehh.png",
+      "emoji": {
+        "name": "kr_ehh",
+        "category": "텍스트",
+        "aliases": [
+          "엥"
+        ]
+      }
+    },
+    {
+      "downloaded": true,
+      "fileName": "kr_yeh.png",
+      "emoji": {
+        "name": "kr_yeh",
+        "category": "텍스트",
+        "aliases": [
+          "예?"
+        ]
+      }
+    },
+    {
+      "downloaded": true,
+      "fileName": "kr_oh.png",
+      "emoji": {
+        "name": "kr_oh",
+        "category": "텍스트",
+        "aliases": [
+          "오"
+        ]
+      }
+    },
+    {
+      "downloaded": true,
+      "fileName": "kr_wow.png",
+      "emoji": {
+        "name": "kr_wow",
+        "category": "텍스트",
+        "aliases": [
+          "와"
+        ]
+      }
+    },
+    {
+      "downloaded": true,
+      "fileName": "kr_perfect.png",
+      "emoji": {
+        "name": "kr_perfect",
+        "category": "텍스트",
+        "aliases": [
+          "완벽"
+        ]
+      }
+    },
+    {
+      "downloaded": true,
+      "fileName": "kr_wammaya.png",
+      "emoji": {
+        "name": "kr_wammaya",
+        "category": "텍스트",
+        "aliases": [
+          "왐마야"
+        ]
+      }
+    },
+    {
+      "downloaded": true,
+      "fileName": "kr_why.png",
+      "emoji": {
+        "name": "kr_why",
+        "category": "텍스트",
+        "aliases": [
+          "왜"
+        ]
+      }
+    },
+    {
+      "downloaded": true,
+      "fileName": "kr_why2.png",
+      "emoji": {
+        "name": "kr_why2",
+        "category": "텍스트",
+        "aliases": [
+          "왜?"
+        ]
+      }
+    },
+    {
+      "downloaded": true,
+      "fileName": "kr_greatwork.png",
+      "emoji": {
+        "name": "kr_greatwork",
+        "category": "텍스트",
+        "aliases": [
+          "위업"
+        ]
+      }
+    },
+    {
+      "downloaded": true,
+      "fileName": "kr_useful.png",
+      "emoji": {
+        "name": "kr_useful",
+        "category": "텍스트",
+        "aliases": [
+          "유익해요"
+        ]
+      }
+    },
+    {
+      "downloaded": true,
+      "fileName": "kr_yes3.png",
+      "emoji": {
+        "name": "kr_yes3",
+        "category": "텍스트",
+        "aliases": [
+          "응"
+        ]
+      }
+    },
+    {
+      "downloaded": true,
+      "fileName": "kr_yes4.png",
+      "emoji": {
+        "name": "kr_yes4",
+        "category": "텍스트",
+        "aliases": [
+          "응!"
+        ]
+      }
+    },
+    {
+      "downloaded": true,
+      "fileName": "kr_supportyou.png",
+      "emoji": {
+        "name": "kr_supportyou",
+        "category": "텍스트",
+        "aliases": [
+          "응원해요"
+        ]
+      }
+    },
+    {
+      "downloaded": true,
+      "fileName": "kr_whatisthis.png",
+      "emoji": {
+        "name": "kr_whatisthis",
+        "category": "텍스트",
+        "aliases": [
+          "이것뭐에요"
+        ]
+      }
+    },
+    {
+      "downloaded": true,
+      "fileName": "kr_itworks.png",
+      "emoji": {
+        "name": "kr_itworks",
+        "category": "텍스트",
+        "aliases": [
+          "이게되네"
+        ]
+      }
+    },
+    {
+      "downloaded": true,
+      "fileName": "kr_ing.png",
+      "emoji": {
+        "name": "kr_ing",
+        "category": "텍스트",
+        "aliases": [
+          "잉"
+        ]
+      }
+    },
+    {
+      "downloaded": true,
+      "fileName": "kr_wanttosleep.png",
+      "emoji": {
+        "name": "kr_wanttosleep",
+        "category": "텍스트",
+        "aliases": [
+          "자고싶다"
+        ]
+      }
+    },
+    {
+      "downloaded": true,
+      "fileName": "kr_sleepy.png",
+      "emoji": {
+        "name": "kr_sleepy",
+        "category": "텍스트",
+        "aliases": [
+          "자도자도졸려"
+        ]
+      }
+    },
+    {
+      "downloaded": true,
+      "fileName": "kr_goingtosleep.png",
+      "emoji": {
+        "name": "kr_goingtosleep",
+        "category": "텍스트",
+        "aliases": [
+          "자러가요"
+        ]
+      }
+    },
+    {
+      "downloaded": true,
+      "fileName": "kr_goodbye.png",
+      "emoji": {
+        "name": "kr_goodbye",
+        "category": "텍스트",
+        "aliases": [
+          "잘가게"
+        ]
+      }
+    },
+    {
+      "downloaded": true,
+      "fileName": "kr_goodnight.png",
+      "emoji": {
+        "name": "kr_goodnight",
+        "category": "텍스트",
+        "aliases": [
+          "잘자요"
+        ]
+      }
+    },
+    {
+      "downloaded": true,
+      "fileName": "kr_soundsfun.png",
+      "emoji": {
+        "name": "kr_soundsfun",
+        "category": "텍스트",
+        "aliases": [
+          "재밌겠다"
+        ]
+      }
+    },
+    {
+      "downloaded": true,
+      "fileName": "kr_jamstory.png",
+      "emoji": {
+        "name": "kr_jamstory",
+        "category": "텍스트",
+        "aliases": [
+          "잼얘"
+        ]
+      }
+    },
+    {
+      "downloaded": true,
+      "fileName": "kr_metoo.png",
+      "emoji": {
+        "name": "kr_metoo",
+        "category": "텍스트",
+        "aliases": [
+          "저도요"
+        ]
+      }
+    },
+    {
+      "downloaded": true,
+      "fileName": "kr_thankyou3.png",
+      "emoji": {
+        "name": "kr_thankyou3",
+        "category": "텍스트",
+        "aliases": [
+          "정말고마워요"
+        ]
+      }
+    },
+    {
+      "downloaded": true,
+      "fileName": "kr_please.png",
+      "emoji": {
+        "name": "kr_please",
+        "category": "텍스트",
+        "aliases": [
+          "제발"
+        ]
+      }
+    },
+    {
+      "downloaded": true,
+      "fileName": "kr_pleaseme.png",
+      "emoji": {
+        "name": "kr_pleaseme",
+        "category": "텍스트",
+        "aliases": [
+          "제발저요"
+        ]
+      }
+    },
+    {
+      "downloaded": true,
+      "fileName": "kr_sleepy2.png",
+      "emoji": {
+        "name": "kr_sleepy2",
+        "category": "텍스트",
+        "aliases": [
+          "졸려"
+        ]
+      }
+    },
+    {
+      "downloaded": true,
+      "fileName": "kr_looksgood.png",
+      "emoji": {
+        "name": "kr_looksgood",
+        "category": "텍스트",
+        "aliases": [
+          "좋아보여"
+        ]
+      }
+    },
+    {
+      "downloaded": true,
+      "fileName": "kr_goodnight2.png",
+      "emoji": {
+        "name": "kr_goodnight2",
+        "category": "텍스트",
+        "aliases": [
+          "좋은밤"
+        ]
+      }
+    },
+    {
+      "downloaded": true,
+      "fileName": "kr_goodmorning.png",
+      "emoji": {
+        "name": "kr_goodmorning",
+        "category": "텍스트",
+        "aliases": [
+          "좋은아침"
+        ]
+      }
+    },
+    {
+      "downloaded": true,
+      "fileName": "kr_goodafternoon.png",
+      "emoji": {
+        "name": "kr_goodafternoon",
+        "category": "텍스트",
+        "aliases": [
+          "좋은오후"
+        ]
+      }
+    },
+    {
+      "downloaded": true,
+      "fileName": "kr_goodstory.png",
+      "emoji": {
+        "name": "kr_goodstory",
+        "category": "텍스트",
+        "aliases": [
+          "좋은이야기"
+        ]
+      }
+    },
+    {
+      "downloaded": true,
+      "fileName": "kr_goodevening.png",
+      "emoji": {
+        "name": "kr_goodevening",
+        "category": "텍스트",
+        "aliases": [
+          "좋은저녁"
+        ]
+      }
+    },
+    {
+      "downloaded": true,
+      "fileName": "kr_sleepwell.png",
+      "emoji": {
+        "name": "kr_sleepwell",
+        "category": "텍스트",
+        "aliases": [
+          "주무세요"
+        ]
+      }
+    },
+    {
+      "downloaded": true,
+      "fileName": "kr_giveme.png",
+      "emoji": {
+        "name": "kr_giveme",
+        "category": "텍스트",
+        "aliases": [
+          "줘"
+        ]
+      }
+    },
+    {
+      "downloaded": true,
+      "fileName": "kr_really.png",
+      "emoji": {
+        "name": "kr_really",
+        "category": "텍스트",
+        "aliases": [
+          "진짜"
+        ]
+      }
+    },
+    {
+      "downloaded": true,
+      "fileName": "kr_seemsreal.png",
+      "emoji": {
+        "name": "kr_seemsreal",
+        "category": "텍스트",
+        "aliases": [
+          "진짜같은데"
+        ]
+      }
+    },
+    {
+      "downloaded": true,
+      "fileName": "kr_home.png",
+      "emoji": {
+        "name": "kr_home",
+        "category": "텍스트",
+        "aliases": [
+          "집"
+        ]
+      }
+    },
+    {
+      "downloaded": true,
+      "fileName": "kr_wanttogohome.png",
+      "emoji": {
+        "name": "kr_wanttogohome",
+        "category": "텍스트",
+        "aliases": [
+          "집에가고싶다"
+        ]
+      }
+    },
+    {
+      "downloaded": true,
+      "fileName": "kr_best.png",
+      "emoji": {
+        "name": "kr_best",
+        "category": "텍스트",
+        "aliases": [
+          "짱"
+        ]
+      }
+    },
+    {
+      "downloaded": true,
+      "fileName": "kr_kiss.png",
+      "emoji": {
+        "name": "kr_kiss",
+        "category": "텍스트",
+        "aliases": [
+          "쪽"
+        ]
+      }
+    },
+    {
+      "downloaded": true,
+      "fileName": "kr_youth.png",
+      "emoji": {
+        "name": "kr_youth",
+        "category": "텍스트",
+        "aliases": [
+          "청춘"
+        ]
+      }
+    },
+    {
+      "downloaded": true,
+      "fileName": "kr_thebest.png",
+      "emoji": {
+        "name": "kr_thebest",
+        "category": "텍스트",
+        "aliases": [
+          "최고예요"
+        ]
+      }
+    },
+    {
+      "downloaded": true,
+      "fileName": "kr_recommend.png",
+      "emoji": {
+        "name": "kr_recommend",
+        "category": "텍스트",
+        "aliases": [
+          "추천"
+        ]
+      }
+    },
+    {
+      "downloaded": true,
+      "fileName": "kr_congrats.png",
+      "emoji": {
+        "name": "kr_congrats",
+        "category": "텍스트",
+        "aliases": [
+          "축하해요"
+        ]
+      }
+    },
+    {
+      "downloaded": true,
+      "fileName": "kr_lol.png",
+      "emoji": {
+        "name": "kr_lol",
+        "category": "텍스트",
+        "aliases": [
+          "ㅋㅋㅋㅋ"
+        ]
+      }
+    },
+    {
+      "downloaded": true,
+      "fileName": "kr_empty.png",
+      "emoji": {
+        "name": "kr_empty",
+        "category": "텍스트",
+        "aliases": [
+          "텅"
+        ]
+      }
+    },
+    {
+      "downloaded": true,
+      "fileName": "kr_fighting.png",
+      "emoji": {
+        "name": "kr_fighting",
+        "category": "텍스트",
+        "aliases": [
+          "파이팅"
+        ]
+      }
+    },
+    {
+      "downloaded": true,
+      "fileName": "kr_fudefude.png",
+      "emoji": {
+        "name": "kr_fudefude",
+        "category": "텍스트",
+        "aliases": [
+          "푸데푸데"
+        ]
+      }
+    },
+    {
+      "downloaded": true,
+      "fileName": "kr_wanttod.png",
+      "emoji": {
+        "name": "kr_wanttod",
+        "category": "텍스트",
+        "aliases": [
+          "하고싶다"
+        ]
+      }
+    },
+    {
+      "downloaded": true,
+      "fileName": "kr_cantdo.png",
+      "emoji": {
+        "name": "kr_cantdo",
+        "category": "텍스트",
+        "aliases": [
+          "할수없다"
+        ]
+      }
+    },
+    {
+      "downloaded": true,
+      "fileName": "kr_cando.png",
+      "emoji": {
+        "name": "kr_cando",
+        "category": "텍스트",
+        "aliases": [
+          "할수있다"
+        ]
+      }
+    },
+    {
+      "downloaded": true,
+      "fileName": "kr_happy.png",
+      "emoji": {
+        "name": "kr_happy",
+        "category": "텍스트",
+        "aliases": [
+          "행복해요"
+        ]
+      }
+    },
+    {
+      "downloaded": true,
+      "fileName": "kr_huh2.png",
+      "emoji": {
+        "name": "kr_huh2",
+        "category": "텍스트",
+        "aliases": [
+          "헉"
+        ]
+      }
+    },
+    {
+      "downloaded": true,
+      "fileName": "kr_heol.png",
+      "emoji": {
+        "name": "kr_heol",
+        "category": "텍스트",
+        "aliases": [
+          "헐"
+        ]
+      }
+    },
+    {
+      "downloaded": true,
+      "fileName": "kr_hehe.png",
+      "emoji": {
+        "name": "kr_hehe",
+        "category": "텍스트",
+        "aliases": [
+          "헤헤"
+        ]
+      }
+    },
+    {
+      "downloaded": true,
+      "fileName": "kr_fighting2.png",
+      "emoji": {
+        "name": "kr_fighting2",
+        "category": "텍스트",
+        "aliases": [
+          "화이팅"
+        ]
+      }
+    },
+    {
+      "downloaded": true,
+      "fileName": "kr_interesting2.png",
+      "emoji": {
+        "name": "kr_interesting2",
+        "category": "텍스트",
+        "aliases": [
+          "흥미로워"
+        ]
+      }
+    },
+    {
+      "downloaded": true,
+      "fileName": "kr_cheerup.png",
+      "emoji": {
+        "name": "kr_cheerup",
+        "category": "텍스트",
+        "aliases": [
+          "힘내세요"
+        ]
+      }
+    },
+    {
+      "downloaded": true,
+      "fileName": "kr_hing.png",
+      "emoji": {
+        "name": "kr_hing",
+        "category": "텍스트",
+        "aliases": [
+          "힝"
+        ]
+      }
+    },
+    {
+      "downloaded": true,
+      "fileName": "question.png",
+      "emoji": {
+        "name": "question",
+        "category": "텍스트",
+        "aliases": [
+          "?"
+        ]
+      }
+    },
+    {
+      "downloaded": true,
+      "fileName": "exclamation.png",
+      "emoji": {
+        "name": "exclamation",
+        "category": "텍스트",
+        "aliases": [
+          "!"
+        ]
+      }
+    }
+  ]
+}
