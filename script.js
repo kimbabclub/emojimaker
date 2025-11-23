@@ -76,42 +76,24 @@ document.addEventListener('DOMContentLoaded', async () => {
 async function loadFonts() {
     let availableFonts = [];
     
-    // Font Access API 사용 (Chrome 103+)
+    // Font Access API 사용 시도 (Chrome 103+)
     try {
         if ('queryLocalFonts' in window) {
             try {
-                // 권한 확인
-                const status = await navigator.permissions.query({ name: 'local-fonts' });
-                
-                // 권한이 거부된 경우 직접 시도 (prompt 상태일 수 있음)
-                if (status.state === 'denied') {
-                    // 거부된 경우에도 한 번 시도
-                    try {
-                        const localFonts = await window.queryLocalFonts();
-                        const localFontNames = [...new Set(localFonts.map(font => font.family))];
-                        availableFonts = localFontNames.sort();
-                    } catch (e) {
-                        // 권한 거부로 실패
-                    }
-                } else {
-                    // granted 또는 prompt 상태
-                    const localFonts = await window.queryLocalFonts();
-                    const localFontNames = [...new Set(localFonts.map(font => font.family))];
-                    availableFonts = localFontNames.sort();
-                }
-            } catch (permErr) {
-                // permissions.query가 실패하면 직접 시도
-                try {
-                    const localFonts = await window.queryLocalFonts();
-                    const localFontNames = [...new Set(localFonts.map(font => font.family))];
-                    availableFonts = localFontNames.sort();
-                } catch (e) {
-                    // Font Access API 사용 불가
-                }
+                const localFonts = await window.queryLocalFonts();
+                const localFontNames = [...new Set(localFonts.map(font => font.family))];
+                availableFonts = localFontNames.sort();
+            } catch (e) {
+                // Font Access API 실패 시 폴백 방법 사용
             }
         }
     } catch (err) {
         // Font Access API 사용 불가
+    }
+    
+    // Font Access API가 실패했거나 폰트가 없으면 Canvas 기반 폰트 감지 사용
+    if (availableFonts.length === 0) {
+        availableFonts = detectAvailableFonts();
     }
     
     // 드롭다운에 폰트 추가
@@ -120,7 +102,7 @@ async function loadFonts() {
         if (availableFonts.length === 0) {
             const option = document.createElement('option');
             option.value = '';
-            option.textContent = '폰트를 불러올 수 없습니다 (Font Access API 권한 필요)';
+            option.textContent = '폰트를 불러올 수 없습니다';
             fontSelect.appendChild(option);
         } else {
             availableFonts.forEach(font => {
@@ -137,6 +119,71 @@ async function loadFonts() {
     // 시스템 폰트 로딩 대기 후 미리보기 갱신 시도
     try { if (document.fonts && document.fonts.ready) await document.fonts.ready; } catch(_) {}
     try { updateLivePreviews(); } catch(_) {}
+}
+
+// Canvas를 사용한 폰트 감지 (Font Access API 없이)
+function detectAvailableFonts() {
+    const testFonts = [
+        // 한글 폰트
+        '나눔고딕', 'Nanum Gothic',
+        '나눔명조', 'Nanum Myeongjo',
+        '나눔바른고딕', 'Nanum Barun Gothic',
+        '나눔스퀘어', 'Nanum Square',
+        '나눔펜', 'Nanum Pen',
+        '맑은 고딕', 'Malgun Gothic',
+        '돋움', 'Dotum',
+        '굴림', 'Gulim',
+        '바탕', 'Batang',
+        '궁서', 'Gungsuh',
+        'HY견고딕', 'HY Gothic',
+        'HY견명조', 'HY MyeongJo',
+        'HY헤드라인M', 'HY HeadLine',
+        'HY그래픽M', 'HY Graphic',
+        'Noto Sans KR', 'Noto Serif KR',
+        'Pretendard', 'Pretendard Variable',
+        'IBM Plex Sans KR',
+        'KoPub Dotum', 'KoPub Batang',
+        // 영문 폰트
+        'Arial', 'Helvetica', 'Times New Roman', 'Courier New',
+        'Georgia', 'Verdana', 'Tahoma', 'Trebuchet MS',
+        'Impact', 'Comic Sans MS', 'Lucida Console',
+        'Roboto', 'Open Sans', 'Lato', 'Montserrat',
+        'Source Sans Pro', 'Raleway', 'Ubuntu',
+        // 일본어 폰트
+        'Noto Sans JP', 'Noto Serif JP',
+        'Yu Gothic', 'Meiryo', 'MS Gothic', 'MS Mincho',
+        // 중국어 폰트
+        'Noto Sans SC', 'Noto Serif SC', 'SimHei', 'SimSun',
+        // 기타
+        'Apple SD Gothic Neo', 'AppleGothic', 'AppleMyungjo',
+        'Nanum Gothic Coding', 'D2Coding', 'Consolas', 'Monaco', 'Courier'
+    ];
+    
+    const canvas = document.createElement('canvas');
+    const ctx = canvas.getContext('2d');
+    const baseFont = 'monospace';
+    const testString = 'mmmmmmmmmmlli';
+    const baseWidth = {};
+    
+    // 기본 폰트로 기준 너비 측정
+    ctx.font = `12px ${baseFont}`;
+    baseWidth[baseFont] = ctx.measureText(testString).width;
+    
+    const available = [];
+    
+    // 각 폰트가 실제로 사용 가능한지 테스트
+    testFonts.forEach(font => {
+        ctx.font = `12px "${font}", ${baseFont}`;
+        const width = ctx.measureText(testString).width;
+        
+        // 폰트가 실제로 로드되었는지 확인 (기본 폰트와 너비가 다르면 사용 가능)
+        if (width !== baseWidth[baseFont]) {
+            available.push(font);
+        }
+    });
+    
+    // 중복 제거 및 정렬
+    return [...new Set(available)].sort();
 }
 
 // 텍스트 너비 측정 (폰트 감지용)
